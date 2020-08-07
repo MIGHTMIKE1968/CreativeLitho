@@ -1,3 +1,39 @@
+<?php
+
+
+if ($_POST['submit']) {
+	
+	if (!$_POST['name']) {
+		$error="<br/>- Please enter your name";
+	}
+	
+	if (!$_POST['email']) {
+		$error.="<br/>- Please enter your email";
+	}
+	
+	if (!$_POST['message']) {
+		$error.="<br/>- Please enter a message";
+	}
+	
+	if (!$_POST['check']) {
+		$error.="<br/>- Please confirm you are human";
+	}
+	
+	if ($error) {
+		$results='<div class="alert alert-danger" role="alert"><strong>Sorry, there is an error.</strong> Please correct the following: '.$error.' </div';
+	} else {
+		mail("creativelitho@sbcglobal.net", "Contact message", "Name: ".$_POST['name'].
+			"Email: ".$_POST['email'].
+			"Message: ".$_POST['message']);
+		{
+		$results='<div class="alert alert-success" role="alert"><stron>Thank you! We will get back in touch with you shortly.</div>';	
+		}
+	}
+}
+		   
+
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -13,6 +49,8 @@
     
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     
+<link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap" rel="stylesheet">
+    
 <title>Creative Litho</title>
 </head>
 
@@ -20,7 +58,7 @@
     
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
           <img src="img/bullet.png" alt="rose icon" style="width:70px; height:auto;">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,14 +76,14 @@
                 <a class="nav-link" href="#products">PRODUCTS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-envelope"></i></a>
+                <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i></a>
               </li>
           </ul>
       </div>
   </div>
 </nav>
     
-<div class="container">
+<div class="container" id="top">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
      
     
@@ -84,7 +122,7 @@
             <span class="name">Creative Litho Inc.</span> is a full service, locally owned and family operated union printing and graphics company. Located in St. Louis's historic Cherokee Street business district we offer our clients a wide variety of copy, printing, design and bindery services. We welcome all types of work both big and small. Come by or give us a call today.
         </p>
         
-        <p class="address">
+        <p class="address_one">
             3021 Cherokee St. • St. Louis, MO 63118
         </p>
         
@@ -92,10 +130,14 @@
             Monday - Friday: 8:00 AM - 4:00 PM
         </p>
         
+        <p>
+            314.772.6779
+        </p>
+        
     </div>
     <div class="container">
         <div class="row">
-            <h1 class="story m-0" id="products">PRODUCTS</h1>
+            <h1 class="story m-0" id="products">PRODUCTS &amp; SERVICES</h1>
             <div class="col-md-4 m-0 pt-4 pb-2 one">
                 <ul>
                     <li>Business Cards</li>
@@ -171,41 +213,90 @@
             
             <div class="col-md-3 mt-4 mb-4">
                 <div>
-                    <img class="img-fluid img-thumbnail" src="img/cl5art.jpg" alt="5 cent copies">
+                    <img class="img-fluid img-thumbnail hvr-grow" src="img/cl5art.jpg" alt="5 cent copies">
                 </div>
             </div>
             <div class="col-md-3 mt-4 mb-4">
                 <div>
-                    <img class="img-fluid img-thumbnail" src="img/clcolorart.jpg" alt="5 cent copies">
+                    <img class="img-fluid img-thumbnail hvr-grow" src="img/clcolorart.jpg" alt="5 cent copies">
                 </div>
             </div>
             <div class="col-md-3 mt-4 mb-4">
                 <div>
-                    <img class="img-fluid img-thumbnail" src="img/clsaveart.jpg" alt="5 cent copies">
+                    <img class="img-fluid img-thumbnail hvr-grow" src="img/clsaveart.jpg" alt="5 cent copies">
                 </div>
             </div>
             <div class="col-md-3 mt-4 mb-4">
                 <div>
-                    <img class="img-fluid img-thumbnail" src="img/clcalleart.jpg" alt="5 cent copies">
+                    <img class="img-fluid img-thumbnail hvr-grow" src="img/clcalleart.jpg" alt="5 cent copies">
                 </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <section id="contact">
+		
+			    <div class="row">
+				
+				    <div class="col-md-12 mb-lg-4 text-center">
+					
+					    <?php echo $results;?>
+					
+						<h2 class="text-center"><strong>CONTACT US</strong></h2>
+					
+					    <form method="post" role="form">
+						
+						    <div class="form-group">
+							    <input type="text" name="name" class="form-control" placeholder="Your Name" value="<?php echo $_POST['name']; ?>">
+						    </div>
+						
+						    <div class="form-group">
+							    <input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $_POST['email']; ?>">
+						    </div>
+						
+						    <div class="form-group">
+							    <textarea name="message" rows="8" class="form-control" placeholder="Message..."><?php echo $_POST['message']; ?></textarea>
+						    </div>
+						
+						    <div class="checkbox">
+							    <label>
+								    <input type="checkbox" name="check"> I am human
+							    </label>
+						    </div>
+						
+						    <div align="center">
+							    <input type="submit" name="submit" class="btn btn-default" value="send message"/>
+						    </div>
+						
+					    </form>
+						  
+				    </div>
+			    </div>
+	        </section>
+            
+            <div>
+                <h3>
+                    <p class="address m-0 text-center mb-3">3021 Cherokee St. | St. Louis, MO 63118</p>
+                    <p class="phone mb-1">314.772.6779</p>
+                </h3>
             </div>
             
-            <h1 class="story m-0" id="products">CONTACT US</h1>
-            <?php include "php/contact.php";?>
-            
-            <?php 
-
-            echo "This is php";
-
-            ?>
-        </div>  
+        </div>
     </div>
 </div>
     
+<div class="container text-center">
+    <img class="social" src="img/ccards.jpg" width="220px" height="auto" alt="credit cards"/>
+    <h4 class="mt-3 mb-3"><a href="#top"><i class="fas fa-arrow-circle-up"></i></a></h4>
+</div>
     
-    
-    
-    
+<div class="footer pt-5 pb-5">
+    <div class="container">
+    <h3>3021 Cherokee Street &nbsp;| &nbsp;Saint Louis, MO 63118 &nbsp;| &nbsp;314.772.6779</h3>
+    <h3>© Copyright 2020, Creative Litho Inc. &nbsp;All Rights Reserved.</h3>
+    <h4 class="sonic">Web &nbsp;Design &nbsp;by &nbsp;Sonicpress &nbsp;| &nbsp;314.934.0168</h4>
+    </div>
+</div>
     
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     

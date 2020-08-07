@@ -1,0 +1,208 @@
+body {
+    margin-top: 95px;
+}
+
+.navbar-dark {
+    background-color: rgb(68, 4, 120);  
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white !important;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: rgb(255, 238, 0) !important;
+}
+
+.nav-link {
+    font-size: 1.4rem !important;
+}
+
+#story {
+    background-image: url("../img/cl_background.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    z-index: 0;
+    border-right: 1px solid rgb(48, 14, 7);
+    border-left: 1px solid rgb(48, 14, 7);
+}
+
+.story {
+    font-family: Red Rose;
+    font-weight: 400;
+    text-align: center;
+    font-size: 2.6rem;
+    background-color: rgb(48, 14, 7);
+    color: white;
+    width: 100%;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgb(68, 4, 120);
+}
+
+.address_one {
+    font-size: 1.6rem;
+    font-weight: 700;    
+}
+
+.hours {
+    font-size: 1.6rem;
+    font-weight: 700;    
+}
+
+p {
+    font-family: Lato;
+    font-weight: 400;
+    margin: 0 50px 0 50px;
+    width: auto;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 40px;
+    line-height: normal;
+}
+
+p:nth-of-type(1) {
+    margin-top: 40px;
+}
+
+p:nth-of-type(4) {
+    margin-bottom: 0;
+    padding-bottom: 40px;
+    font-size: 2.5rem;
+    text-align: left;
+    color: rgb(68, 4, 120);
+    font-weight: 900;
+}
+
+ul {
+    font-family: Lato;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.one {
+    background-color: rgb(255, 247, 0);
+}
+
+.two {
+    background-color: rgb(129, 205, 252);
+}
+
+.three {
+    background-color: rgb(250, 130, 232);
+}
+
+.four {
+    background-color: rgb(255, 191, 222);
+}
+
+.five {
+    background-color: rgb(58, 252, 110);
+}
+
+.six {
+    background-color: rgb(232, 200, 250);
+}
+
+#contact {
+	padding: 40px 0;
+	color: #140660;
+}
+
+#contact .btn-default {
+	border: 1px solid #f9d902;
+	background-color: #f9d902;
+	border-radius: 0;
+}
+
+#contact .btn-default:hover {
+	color: #f9d902;
+	background-color: #140660;
+}
+
+
+.form-group {
+    max-width: 100%;
+    padding: 0 10px 0 10px;
+}
+
+.address {
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: black;
+    margin: 0;
+}
+
+.phone {
+    font-family: Lato;
+    font-weight: 900;
+    font-size: 2.4rem;
+    color: rgb(68, 4, 120);
+    text-align: center;
+    margin: 0;
+}
+
+.footer {
+    background-color: rgb(68, 4, 120);
+    width: 100%;
+}
+
+h3 {
+   font-family: Lato;
+   font-size: 1rem;
+   font-weight: 400;
+   text-align: center;
+   line-height: normal;
+   color: white;
+}
+
+h4 {
+   font-family: Lato;
+   font-size: 0.8rem;
+   font-weight: 400;
+   text-align: center;
+   color: yellow;
+}
+
+.social {
+  max-width: 100%;
+}
+
+.fa-arrow-circle-up {
+    font-size: 2rem;
+    margin: 10px 0 20px 0;
+    text-decoration: none;
+    color: rgb(82, 0, 122); 
+}
+
+.fa-arrow-circle-up:hover {
+    color: red;
+}
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
